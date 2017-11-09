@@ -1,4 +1,4 @@
-package devutility.test.spring.bean.scope;
+package devutility.test.spring.scope;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -1,4 +1,4 @@
-package devutility.test.spring.bean.di;
+package devutility.test.spring.bean;
 
 public class ElementBean {
 	public ElementBean() {

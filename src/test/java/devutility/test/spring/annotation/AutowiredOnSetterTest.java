@@ -1,23 +1,25 @@
-package devutility.test.spring.bean.annotation;
+package devutility.test.spring.annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import devutility.test.spring.bean.di.ElementBean;
+public class AutowiredOnSetterTest {
+	private String message;
 
-public class AutowiredOnPropertyTest {
+	public String getMessage() {
+		return message;
+	}
+	
 	@Autowired
-	private ElementBean elementBean;
-
-	public void doSomething() {
-		elementBean.doSomething();
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		AutowiredOnPropertyTest test = context.getBean(AutowiredOnPropertyTest.class);
-		test.doSomething();
+		AutowiredOnSetterTest test = context.getBean(AutowiredOnSetterTest.class);
+		System.out.println(test.getMessage());
 	}
 }

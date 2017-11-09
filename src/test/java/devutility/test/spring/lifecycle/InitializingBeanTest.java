@@ -1,9 +1,10 @@
-package devutility.test.spring.bean.lifecycle;
+package devutility.test.spring.lifecycle;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class InitMethodTest {
+public class InitializingBeanTest implements InitializingBean {
 	private String message;
 
 	public String getMessage() {
@@ -14,14 +15,15 @@ public class InitMethodTest {
 		this.message = message;
 	}
 
-	protected static void init() {
-		System.out.println("Start init InitMethodTest bean...");
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Start execute afterPropertiesSet...");
 	}
 
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		InitMethodTest test = context.getBean(InitMethodTest.class);
+		InitializingBeanTest test = context.getBean(InitializingBeanTest.class);
 		System.out.println(test.getMessage());
 	}
 }

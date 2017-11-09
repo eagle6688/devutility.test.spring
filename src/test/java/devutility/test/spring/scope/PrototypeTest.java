@@ -1,9 +1,9 @@
-package devutility.test.spring.bean.scope;
+package devutility.test.spring.scope;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class DefaultTest {
+public class PrototypeTest {
 	private String message;
 
 	public String getMessage() {
@@ -17,10 +17,10 @@ public class DefaultTest {
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		DefaultTest obj1 = context.getBean(DefaultTest.class);
+		PrototypeTest obj1 = context.getBean(PrototypeTest.class);
 		obj1.setMessage("Hello world!");
 
-		DefaultTest obj2 = context.getBean(DefaultTest.class);
+		PrototypeTest obj2 = context.getBean(PrototypeTest.class);
 		obj2.setMessage("Change value!");
 
 		System.out.println(String.format("Message of obj1 is %s.", obj1.getMessage()));

@@ -1,29 +1,25 @@
-package devutility.test.spring.bean.lifecycle;
+package devutility.test.spring.annotation.copy;
 
-import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class InitializingBeanTest implements InitializingBean {
+public class RequiredTest {
 	private String message;
 
 	public String getMessage() {
 		return message;
 	}
 
+	@Required
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("Start execute afterPropertiesSet...");
 	}
 
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		InitializingBeanTest test = context.getBean(InitializingBeanTest.class);
+		RequiredTest test = context.getBean(RequiredTest.class);
 		System.out.println(test.getMessage());
 	}
 }

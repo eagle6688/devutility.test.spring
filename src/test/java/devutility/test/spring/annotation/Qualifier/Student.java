@@ -1,4 +1,4 @@
-package devutility.test.spring.bean.annotation.Qualifier;
+package devutility.test.spring.annotation.Qualifier;
 
 public class Student {
 	private Integer age;

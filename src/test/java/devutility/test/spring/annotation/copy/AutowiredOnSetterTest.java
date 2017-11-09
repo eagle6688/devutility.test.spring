@@ -1,4 +1,4 @@
-package devutility.test.spring.bean.annotation;
+package devutility.test.spring.annotation.copy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

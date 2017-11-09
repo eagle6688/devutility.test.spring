@@ -1,9 +1,9 @@
-package devutility.test.spring.bean.scope;
+package devutility.test.spring.lifecycle;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class PrototypeTest {
+public class InitMethodTest {
 	private String message;
 
 	public String getMessage() {
@@ -14,16 +14,14 @@ public class PrototypeTest {
 		this.message = message;
 	}
 
+	protected static void init() {
+		System.out.println("Start init InitMethodTest bean...");
+	}
+
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		PrototypeTest obj1 = context.getBean(PrototypeTest.class);
-		obj1.setMessage("Hello world!");
-
-		PrototypeTest obj2 = context.getBean(PrototypeTest.class);
-		obj2.setMessage("Change value!");
-
-		System.out.println(String.format("Message of obj1 is %s.", obj1.getMessage()));
-		System.out.println(String.format("Message of obj2 is %s.", obj2.getMessage()));
+		InitMethodTest test = context.getBean(InitMethodTest.class);
+		System.out.println(test.getMessage());
 	}
 }

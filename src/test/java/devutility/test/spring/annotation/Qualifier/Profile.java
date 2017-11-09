@@ -1,4 +1,4 @@
-package devutility.test.spring.bean.annotation.Qualifier;
+package devutility.test.spring.annotation.Qualifier;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
