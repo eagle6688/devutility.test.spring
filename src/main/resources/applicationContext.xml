@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:annotation-config />
+	<bean id="DefaultTest" class="devutility.test.spring.bean.scope.DefaultTest"></bean>
+	<bean id="SingletonTest" class="devutility.test.spring.bean.scope.SingletonTest" scope="singleton"></bean>
+	<bean id="PrototypeTest" class="devutility.test.spring.bean.scope.PrototypeTest" scope="prototype"></bean>
+	<bean id="InitMethodTest" class="devutility.test.spring.bean.lifecycle.InitMethodTest" init-method="init">
+		<property name="message" value="Hello World!" />
+	</bean>
+	<bean id="InitializingBeanTest" class="devutility.test.spring.bean.lifecycle.InitializingBeanTest">
+		<property name="message" value="Hello World!" />
+	</bean>
+	<bean id="ElementBean" class="devutility.test.spring.bean.di.ElementBean"></bean>
+	<bean id="BeInjectedBeanTest" class="devutility.test.spring.bean.di.BeInjectedBeanTest">
+		<constructor-arg ref="ElementBean" />
+	</bean>
+	<bean id="RequiredTest" class="devutility.test.spring.bean.annotation.RequiredTest">
+		<property name="message" value="Hello World!" />
+	</bean>
+	<bean id="AutowiredOnSetterTest" class="devutility.test.spring.bean.annotation.AutowiredOnSetterTest">
+		<property name="message" value="Hello World!" />
+	</bean>
+	<bean id="AutowiredOnPropertyTest" class="devutility.test.spring.bean.annotation.AutowiredOnPropertyTest"></bean>
+	<bean id="Profile" class="devutility.test.spring.bean.annotation.Qualifier.Profile"></bean>
+	<bean id="student1" class="devutility.test.spring.bean.annotation.Qualifier.Student">
+		<property name="name" value="James" />
+		<property name="age" value="45" />
+	</bean>
+	<bean id="student2" class="devutility.test.spring.bean.annotation.Qualifier.Student">
+		<property name="name" value="Aldwin" />
+		<property name="age" value="29" />
+	</bean>
+</beans>
