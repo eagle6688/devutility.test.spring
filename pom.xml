@@ -30,17 +30,17 @@
 			<version>${spring-version}</version>
 		</dependency>
 		<!-- Spring end -->
-		<!-- devutility -->
+		<!-- com.github.eagle6688 -->
 		<dependency>
 			<groupId>com.github.eagle6688</groupId>
 			<artifactId>devutility.internal</artifactId>
 			<version>1.1.10</version>
 		</dependency>
 		<dependency>
-			<groupId>com.devutility</groupId>
+			<groupId>com.github.eagle6688</groupId>
 			<artifactId>devutility.test.model</artifactId>
 			<version>0.0.1</version>
 		</dependency>
-		<!-- devutility end -->
+		<!-- com.github.eagle6688 end -->
 	</dependencies>
 </project>
