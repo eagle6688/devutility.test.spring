@@ -39,7 +39,7 @@
 		<dependency>
 			<groupId>com.devutility</groupId>
 			<artifactId>devutility.test.model</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 		<!-- devutility end -->
 	</dependencies>
