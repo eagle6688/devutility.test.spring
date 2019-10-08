@@ -4,9 +4,9 @@ import java.security.InvalidParameterException;
 
 import org.springframework.stereotype.Repository;
 
-import com.devutility.test.entity.mongo.Student;
-
-import devutility.internal.util.RandomHelper;
+import devutility.internal.lang.StringUtils;
+import devutility.internal.test.data.model.Student;
+import devutility.internal.util.RandomUtils;
 import devutility.test.spring.dao.interfaces.StudentDao;
 
 @Repository
@@ -15,19 +15,19 @@ public class StudentDaoImpl implements StudentDao {
 	public int add(Student entity) {
 		System.out.println("Add user ......");
 
-		if (entity.getId() == 0) {
-			throw new InvalidParameterException("Id for Student entity cannot be 0!");
+		if (StringUtils.isNullOrEmpty(entity.getNumber())) {
+			throw new InvalidParameterException("Number for Student entity cannot be null!");
 		}
 
-		return RandomHelper.getNumber(100);
+		return RandomUtils.getNumber(100);
 	}
 
 	@Override
 	public boolean update(Student entity) {
 		System.out.println("Update user ......");
 
-		if (entity.getId() == 0) {
-			throw new InvalidParameterException("Id for Student entity cannot be 0!");
+		if (StringUtils.isNullOrEmpty(entity.getNumber())) {
+			throw new InvalidParameterException("Number for Student entity cannot be null!");
 		}
 
 		return true;
@@ -41,8 +41,8 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public Student find(int id) {
-		Student entity = Student.list(0).get(0);
-		entity.setId(id);
+		Student entity = Student.students(0).get(0);
+		entity.setNumber(String.valueOf(id));
 		return entity;
 	}
 }

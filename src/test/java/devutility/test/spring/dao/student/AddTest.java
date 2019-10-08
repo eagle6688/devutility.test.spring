@@ -1,8 +1,7 @@
 package devutility.test.spring.dao.student;
 
-import com.devutility.test.entity.mongo.Student;
-
 import devutility.internal.test.TestExecutor;
+import devutility.internal.test.data.model.Student;
 import devutility.test.spring.BaseTest;
 import devutility.test.spring.dao.interfaces.StudentDao;
 
@@ -15,12 +14,11 @@ public class AddTest extends BaseTest {
 			return;
 		}
 
-		Student student = Student.list(1).get(0);
+		Student student = Student.students(1).get(0);
 		studentDao.add(student);
 
 		System.out.println("=====================Next test case==========================");
 
-		student.setId(0);
 		studentDao.add(student);
 	}
 
