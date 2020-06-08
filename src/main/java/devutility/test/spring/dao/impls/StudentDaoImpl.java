@@ -5,9 +5,9 @@ import java.security.InvalidParameterException;
 import org.springframework.stereotype.Repository;
 
 import devutility.internal.lang.StringUtils;
-import devutility.internal.test.data.model.Student;
 import devutility.internal.util.RandomUtils;
-import devutility.test.spring.dao.interfaces.StudentDao;
+import devutility.test.model.Student;
+import devutility.test.spring.dao.StudentDao;
 
 @Repository
 public class StudentDaoImpl implements StudentDao {

@@ -1,6 +1,6 @@
-package devutility.test.spring.dao.interfaces;
+package devutility.test.spring.dao;
 
-import devutility.internal.test.data.model.Student;
+import devutility.test.model.Student;
 
 public interface StudentDao {
 	int add(Student entity);

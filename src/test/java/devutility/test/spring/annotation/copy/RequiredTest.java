@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+@SuppressWarnings("deprecation")
 public class RequiredTest {
 	private String message;
 

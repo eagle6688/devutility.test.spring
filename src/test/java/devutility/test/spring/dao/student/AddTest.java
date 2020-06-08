@@ -1,9 +1,9 @@
 package devutility.test.spring.dao.student;
 
 import devutility.internal.test.TestExecutor;
-import devutility.internal.test.data.model.Student;
+import devutility.test.model.Student;
 import devutility.test.spring.BaseTest;
-import devutility.test.spring.dao.interfaces.StudentDao;
+import devutility.test.spring.dao.StudentDao;
 
 public class AddTest extends BaseTest {
 	@Override
