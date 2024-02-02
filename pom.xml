@@ -13,7 +13,7 @@
 	<description>Some classes for test usage.</description>
 
 	<properties>
-		<spring-version>5.2.6.RELEASE</spring-version>
+		<spring-version>5.2.22.RELEASE</spring-version>
 		<swagger-version>2.9.2</swagger-version>
 	</properties>
 
